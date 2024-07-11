@@ -30,6 +30,7 @@ module.exports = {
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         indent: [2, 4],
+        'max-len': ['error', { code: 100, ignoreComments: true }],
         'no-shadow': 'off',
         'no-underscore-dangle': 'off',
         'no-unused-vars': 'warn',
