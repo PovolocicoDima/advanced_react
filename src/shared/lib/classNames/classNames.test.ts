@@ -1,42 +1,39 @@
-import { classNames } from './classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
-    it('with only one param', () => {
-        expect(classNames('someclass')).toBe('someclass');
+    test('with only first param', () => {
+        expect(classNames('someClass')).toBe('someClass');
     });
 
-    it('with additional classes', () => {
-        const expected = 'someclass class1 class2';
-
-        expect(classNames('someclass', {}, ['class1', 'class2'])).toBe(expected);
+    test('with additional class', () => {
+        const expected = 'someClass class1 class2';
+        expect(classNames('someClass', {}, ['class1', 'class2']))
+            .toBe(expected);
     });
 
-    it('with additional classes and mods', () => {
-        const expected = 'someclass class1 class2 hovered scrollable';
-
+    test('with mods', () => {
+        const expected = 'someClass class1 class2 hovered scrollable';
         expect(classNames(
-            'someclass',
+            'someClass',
             { hovered: true, scrollable: true },
             ['class1', 'class2'],
         )).toBe(expected);
     });
 
-    it('with additional classes and mods, 1 mod in false', () => {
-        const expected = 'someclass class1 class2 hovered';
-
+    test('with mods false', () => {
+        const expected = 'someClass class1 class2 hovered';
         expect(classNames(
-            'someclass',
+            'someClass',
             { hovered: true, scrollable: false },
             ['class1', 'class2'],
         )).toBe(expected);
     });
 
-    it('with additional classes and mods, 1 mod is undefined', () => {
-        const expected = 'someclass class1 class2 scrollable';
-
+    test('with mods undefined', () => {
+        const expected = 'someClass class1 class2 hovered';
         expect(classNames(
-            'someclass',
-            { hovered: undefined, scrollable: true },
+            'someClass',
+            { hovered: true, scrollable: undefined },
             ['class1', 'class2'],
         )).toBe(expected);
     });

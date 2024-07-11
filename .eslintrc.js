@@ -7,10 +7,8 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
-    globals: {
-        __IS_DEV__: true,
-    },
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -22,31 +20,45 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
-        'perfectionist',
+        'i18next',
     ],
     rules: {
-        'import/extensions': 'off',
-        'import/no-extraneous-dependencies': 'off',
-        'import/no-unresolved': 'off',
-        'import/prefer-default-export': 'off',
-        indent: [2, 4],
-        'max-len': ['error', { code: 100, ignoreComments: true }],
-        'no-shadow': 'off',
-        'no-underscore-dangle': 'off',
-        'no-unused-vars': 'warn',
-        'perfectionist/sort-objects': [
-            'error',
-            {
-                order: 'asc',
-                type: 'natural',
-            },
-        ],
-        'react/function-component-definition': 'off',
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
-        'react/jsx-props-no-spreading': 'warn',
-        'react/react-in-jsx-scope': 'off',
+        indent: [2, 4],
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['.js', '.jsx', '.tsx'] },
+        ],
+        'import/no-unresolved': 'off',
+        'import/prefer-default-export': 'off',
+        'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'react/jsx-props-no-spreading': 'warn',
+        'react/function-component-definition': 'off',
+        'no-shadow': 'off',
+        'import/extensions': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'no-underscore-dangle': 'off',
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid'],
+            },
+        ],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
     },
+    globals: {
+        __IS_DEV__: true,
+    },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
