@@ -9,9 +9,9 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     };
 
     const typeScriptLoader = {
+        exclude: /node_modules/,
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
     };
 
     const cssLoader = {

@@ -6,8 +6,8 @@ const initialTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || T
 const ThemeProvider: FC = ({ children }) => {
     const [theme, setTheme] = useState<Theme>(initialTheme);
     const defaultProps = useMemo(() => ({
-        theme,
         setTheme,
+        theme,
     }), [theme]);
 
     return (
