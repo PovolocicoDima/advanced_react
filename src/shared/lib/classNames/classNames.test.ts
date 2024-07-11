@@ -20,4 +20,24 @@ describe('classNames', () => {
             ['class1', 'class2'],
         )).toBe(expected);
     });
+
+    it('with additional classes and mods, 1 mod in false', () => {
+        const expected = 'someclass class1 class2 hovered';
+
+        expect(classNames(
+            'someclass',
+            { hovered: true, scrollable: false },
+            ['class1', 'class2'],
+        )).toBe(expected);
+    });
+
+    it('with additional classes and mods, 1 mod is undefined', () => {
+        const expected = 'someclass class1 class2 scrollable';
+
+        expect(classNames(
+            'someclass',
+            { hovered: undefined, scrollable: true },
+            ['class1', 'class2'],
+        )).toBe(expected);
+    });
 });

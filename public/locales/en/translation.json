@@ -1,5 +1,8 @@
 {
-    "change language": "change language",
-    "about page": "about page",
-    "main page": "main page"
+  "change language": "change language",
+  "about page": "about page",
+  "main page": "main page",
+  "not found page": "not found page",
+  "an unexpected error occured": "an unexpected error occured",
+  "reload page": "reload page"
 }

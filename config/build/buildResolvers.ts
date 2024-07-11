@@ -3,12 +3,12 @@ import { BuildOptions } from './types/config';
 
 export function buildResolvers(options: BuildOptions): ResolveOptions {
     return {
+        alias: {},
         extensions: ['.tsx', '.ts', '.js'],
-        preferAbsolute: true,
+        mainFiles: ['index'],
         modules: [
             options.paths.src, 'node_modules',
         ],
-        mainFiles: ['index'],
-        alias: {},
+        preferAbsolute: true,
     };
 }

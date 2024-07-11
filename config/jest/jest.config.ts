@@ -5,9 +5,11 @@
 
 export default {
     clearMocks: true,
-    testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
+    ],
+    moduleDirectories: [
+        'node_modules',
     ],
     moduleFileExtensions: [
         'js',
@@ -17,12 +19,10 @@ export default {
         'json',
         'node',
     ],
-    moduleDirectories: [
-        'node_modules',
-    ],
+    rootDir: '../../',
+    testEnvironment: 'jsdom',
     testMatch: [
         // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
-    rootDir: '../../',
 };
