@@ -1,12 +1,5 @@
 {
-  "about page": "about page",
-  "an unexpected error occured": "an unexpected error occured",
-  "change language": "change language",
-  "main page": "main page",
-  "not found page": "not found page",
-  "reload page": "reload page",
   "throw error": "throw error",
-  "toggle": "toggle",
   "Главная": "Главная",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
@@ -14,5 +7,6 @@
   "Обновить страницу": "Обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
-  "Язык": "Язык"
+  "Язык": "Язык",
+  "Переключить": "Переключить"
 }

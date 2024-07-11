@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -13,9 +12,7 @@ export default {
     },
 } as ComponentMeta<typeof NotFoundPage>;
 
-const Template: ComponentStory<
-    typeof NotFoundPage
-> = (args) => <NotFoundPage {...args as object} />;
+const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};
